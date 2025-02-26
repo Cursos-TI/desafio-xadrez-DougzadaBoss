@@ -1,48 +1,77 @@
 #include <stdio.h>
-
+ 
 int main (){
 
-   int tabuleiro = 8, bispo = 1;
-   char movimento = 'a', movimentotab = 'h';
-//inicio da interação com o usuário para captar os movimentos desejados.
+  //definição das variáveis
 
-   printf("***Bem vindo ao jogo de xadrez!\n\n***");
-   printf("A movimentação das peças sera baseada em letras e número, sendo números representando as laterais do tabuleiro e letras para as partes de cima e baixo. Segue exemplo abaixo\n\n");
+  int j = 0;
+  int opcao;
 
-   //inicio do for para exemplificar o tabuleiro
+  //inicio da interação com o usuário
 
-   for(int exemplonum= 8; exemplonum >= 1; exemplonum--)
-   {
-    printf("%d\n",exemplonum);
+  printf("***BEM VINDO AO XADREZ***\n\n");
 
-    
-   }
-   for (int exemploletra = 'A'; exemploletra <= 'H'; exemploletra ++)
-   {
-       printf("%c ",exemploletra );
-       
-   }
-   printf("\n\nDigite a letra referente a casa que deseja: ");
-   scanf("%c",&movimento);
+  printf("Digite o numero referente a peça que deseja mover.\n");
 
-   printf("Agora digite o numero referente a casa que deseja: ");
-   scanf ("%d",&bispo);
+  printf("1- TORRE\n");
+  printf("2- BISPO\n");
+  printf("3- RAINHA\n");
+  scanf ("%i", &opcao);
 
+  //inicio do switch para mover a peça de acordo com a esolha do jogador
 
- for (tabuleiro; bispo <= tabuleiro; bispo ++)
- {
-        
-    for (movimento, movimentotab; movimento <= movimentotab; movimento++)
+  switch (opcao) {
+    case 1:
+
+    printf("\n");
+
+    //inicio do loop para movimentação da torre usando While
+
+    while ( j < 5)
     {
-        printf("Bispo terminou na casa: %c, %d", movimento, bispo);
-
+      printf("DIREITA ");
+      j++;
     }
+    printf("\n\nA torre se moveu 5 casas para a direita.\n");
+  break;
 
- }
+    //inicio do loop para movimentação do bispo usando do while
+
+    case 2:
+    printf("\n");
+  do 
+  {   
+      printf("CIMA,DIREITA ");
+      j++;
+  } while ( j < 5);
+  
+    printf("\n");
+    printf("\nO bispo se moveu 5 casas na diagonal direita.");
+    break;
+
+    //inicio da movimentação da rainha usando for
+
+    case 3:
+    printf("\n");
+    for (j; j<8; j++)
+    {
+      printf("ESQUERDA ");
+    }
+    printf("\n\n");
+    printf("A rainha se moveu 8 casas para a esquerda.");
+
+    break;
+
+    default:
+    printf("Opção inválida");
+    break;
+  }
+
+  
+
+  
 
 
 
-
-
-    return 0;
+return 0;
 }
