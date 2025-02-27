@@ -6,6 +6,8 @@ int main (){
 
   int j = 0;
   int opcao;
+  int cavaloI = 0;
+  int cavaloJ = 0;
 
   //inicio da interação com o usuário
 
@@ -16,6 +18,7 @@ int main (){
   printf("1- TORRE\n");
   printf("2- BISPO\n");
   printf("3- RAINHA\n");
+  printf("4- CAVALO\n");
   scanf ("%i", &opcao);
 
   //inicio do switch para mover a peça de acordo com a esolha do jogador
@@ -62,15 +65,47 @@ int main (){
 
     break;
 
+    case 4:
+
+    
+//movimentação do cavalo usando o for aninhado
+
+/*for (int i=0, j=0; i <1; i++)
+{
+    for(j; j <2; j++)
+        {
+            printf("BAIXO\n\n");
+        }
+        printf("ESQUERDA\n");
+}printf ("\nO cavalo se moveu 2 casas para baixo e 1 casa para a esquerda.");*/
+
+
+    //MOVIMENTAÇÃO USANDO DO-WHILE
+
+    //inicio do while externo
+do 
+{
+    //inicio do while interno que movimentará o cavalo para cima ou para baixo
+    do 
+    {
+        printf("BAIXO \n\n");
+        cavaloJ++;
+    } while (cavaloJ < 2);
+    //fim do while interno
+
+    
+    printf("ESQUERDA");
+    cavaloI++;
+} while ( cavaloI < 1);
+ printf ("\nO cavalo se moveu 2 casas para baixo e 1 casa para a esquerda.");
+    //fim do while externo responsável por movimentar o cavalo para direita ou esquerda
+
+    break;
+
     default:
     printf("Opção inválida");
     break;
   }
-
-  
-
-  
-
 
 
 return 0;
